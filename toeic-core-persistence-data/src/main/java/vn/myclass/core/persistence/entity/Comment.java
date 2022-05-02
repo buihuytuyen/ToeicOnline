@@ -2,6 +2,8 @@ package vn.myclass.core.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "comment")
 public class Comment {
@@ -18,7 +20,18 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "listenguidelineid")
-    private Listenguideline listenguideline;
+    private ListenGuideline listenguideline;
+
+    @Column(name = "createddate")
+    private Timestamp createdDate;
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
 
     public Integer getCommentId() {
         return commentId;
@@ -44,11 +57,11 @@ public class Comment {
         this.user = user;
     }
 
-    public Listenguideline getListenguideline() {
+    public ListenGuideline getListenguideline() {
         return listenguideline;
     }
 
-    public void setListenguideline(Listenguideline listenguideline) {
+    public void setListenguideline(ListenGuideline listenguideline) {
         this.listenguideline = listenguideline;
     }
 }
