@@ -9,7 +9,7 @@
         <module name="toeic-core-service" />
         <module name="toeic-core-utils" />
         <module name="toeic-core-dao-impl" />
-        <module name="toeci-core-common" />
+        <module name="toeic-core-common" />
         <module name="toeic-web-logic" />
         <module name="toeic-web" />
         <module name="toeic-core-dao" />
@@ -19,5 +19,8 @@
         <module name="toeic-core-persistence-data" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="toeic-core-test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

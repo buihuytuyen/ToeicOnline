@@ -19,7 +19,9 @@
         <module>toeic-core-service-impl</module>
         <module>toeic-core-utils</module>
         <module>toeic-core-persistence-data</module>
-        <module>toeci-core-common</module>
+        <module>toeic-core-common</module>
+        <module>toeic-core-test</module>
+        <module>toeic-core-test</module>
     </modules>
 
     <properties>
@@ -28,7 +30,8 @@
         <servlet.api.version>4.0.1</servlet.api.version>
         <jsp.api.version>2.3.3</jsp.api.version>
         <hibernate.version>6.0.0.Final</hibernate.version>
-        <mysql.connector.version>8.0.28</mysql.connector.version>
+        <testng.version>7.5</testng.version>
+        <mysql.connector.version>8.0.29</mysql.connector.version>
     </properties>
 
 
@@ -54,6 +57,12 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
