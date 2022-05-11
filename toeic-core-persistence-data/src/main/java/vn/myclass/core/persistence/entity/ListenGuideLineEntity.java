@@ -7,10 +7,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "listenguideline")
-public class ListenGuideline {
+public class ListenGuideLineEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer listenGuidelineId;
+    private Integer listenGuideLineId;
 
     @Column(name = "title")
     private String title;
@@ -24,16 +24,23 @@ public class ListenGuideline {
     @Column(name = "modifieddate")
     private Timestamp modifiedDate;
 
-    @OneToMany(mappedBy = "listenguideline",fetch = FetchType.LAZY)
-    private List<Comment> commentList;
+    @OneToMany(mappedBy = "listenGuideLineEntity",fetch = FetchType.LAZY)
+    private List<CommentEntity> commentEntityList;
 
+    public List<CommentEntity> getCommentEntityList() {
+        return commentEntityList;
+    }
+
+    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
+        this.commentEntityList = commentEntityList;
+    }
 
     public Integer getListenGuidelineId() {
-        return listenGuidelineId;
+        return listenGuideLineId;
     }
 
     public void setListenGuidelineId(Integer listenGuidelineId) {
-        this.listenGuidelineId = listenGuidelineId;
+        this.listenGuideLineId = listenGuidelineId;
     }
 
     public String getTitle() {

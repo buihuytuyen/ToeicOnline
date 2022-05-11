@@ -10,6 +10,7 @@
         <module name="toeic-core-utils" />
         <module name="toeic-core-dao-impl" />
         <module name="toeic-core-common" />
+        <module name="toeci-core-test" />
         <module name="toeic-web-logic" />
         <module name="toeic-web" />
         <module name="toeic-core-dao" />

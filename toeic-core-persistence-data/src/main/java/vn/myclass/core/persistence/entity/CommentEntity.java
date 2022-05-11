@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "comment")
-public class Comment {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer commentId;
@@ -16,11 +16,11 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "userid")
-    private User user;
+    private UserEntity userEntity;
 
     @ManyToOne
     @JoinColumn(name = "listenguidelineid")
-    private ListenGuideline listenguideline;
+    private ListenGuideLineEntity listenGuideLineEntity;
 
     @Column(name = "createddate")
     private Timestamp createdDate;
@@ -49,19 +49,19 @@ public class Comment {
         this.content = content;
     }
 
-    public User getUser() {
-        return user;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
-    public ListenGuideline getListenguideline() {
-        return listenguideline;
+    public ListenGuideLineEntity getListenGuidelineEntity() {
+        return listenGuideLineEntity;
     }
 
-    public void setListenguideline(ListenGuideline listenguideline) {
-        this.listenguideline = listenguideline;
+    public void setListenGuidelineEntity(ListenGuideLineEntity listenGuidelineEntity) {
+        this.listenGuideLineEntity = listenGuidelineEntity;
     }
 }

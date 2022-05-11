@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
@@ -21,12 +21,12 @@ public class User {
     @Column(name = "createddate")
     private Timestamp createdDate;
 
-    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
-    private List<Comment> commentList;
+    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY)
+    private List<CommentEntity> commentEntityList;
 
     @ManyToOne
     @JoinColumn(name = "roleid")
-    private Role role;
+    private RoleEntity roleEntity;
 
     public String getFullName() {
         return fullName;
@@ -68,12 +68,21 @@ public class User {
         this.createdDate = createddate;
     }
 
-    public Role getRole() {
-        return role;
+    public RoleEntity getRoleEntity() {
+        return roleEntity;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleEntity(RoleEntity roleEntity) {
+        this.roleEntity = roleEntity;
+    }
+
+    public List<CommentEntity> getCommentEntityList() {
+        return commentEntityList;
+    }
+
+    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
+        this.commentEntityList = commentEntityList;
     }
 }
+
 
